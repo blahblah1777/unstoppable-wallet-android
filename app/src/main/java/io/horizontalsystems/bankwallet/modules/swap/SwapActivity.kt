@@ -15,6 +15,7 @@ import io.horizontalsystems.bankwallet.core.App
 import io.horizontalsystems.bankwallet.core.BaseActivity
 import io.horizontalsystems.bankwallet.entities.Coin
 import io.horizontalsystems.bankwallet.modules.swap.SwapModule.ValidationError.*
+import io.horizontalsystems.bankwallet.modules.swap.approve.SwapApproveFragment
 import io.horizontalsystems.bankwallet.modules.swap.coinselect.SelectSwapCoinModule
 import io.horizontalsystems.uniswapkit.models.TradeType
 import io.horizontalsystems.views.R.attr
@@ -61,6 +62,12 @@ class SwapActivity : BaseActivity() {
         proceedButton.bind(onClick = {
             viewModel.onProceedButtonClick()
         })
+
+        approveButton.setText(getString(R.string.Swap_Approve))
+        approveButton.bind(onClick = {
+            SwapApproveFragment.newInstance(tokenIn!!, BigDecimal("0.1234"), viewModel.spenderAddress.hex).show(supportFragmentManager, "SwapApproveFragment")
+        })
+        approveButton.updateState(true)
 
         viewModel.fromAmountLiveData.observe(this, Observer { amount ->
             fromAmount.editText.setText(amount?.toPlainString())

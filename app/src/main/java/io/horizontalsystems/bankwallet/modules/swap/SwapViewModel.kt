@@ -47,6 +47,9 @@ class SwapViewModel(
     val tradeTypeLiveData = MutableLiveData<TradeType>()
     val proceedButtonEnabledLiveData = MutableLiveData<Boolean>()
     val errorLiveData = MutableLiveData<Throwable>()
+    val spenderAddress: Address
+        get() = kit.routerAddress
+
 
     private var fromCoin: CoinWithBalance?
         get() = fromCoinLiveData.value
@@ -228,7 +231,7 @@ class SwapViewModel(
     }
 
     override fun onCleared() {
-        uniswapKitManager.unlink()
+//        uniswapKitManager.unlink()
     }
 
 }

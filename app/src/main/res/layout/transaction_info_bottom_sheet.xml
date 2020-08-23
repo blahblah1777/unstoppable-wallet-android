@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="@+id/secondaryName">
 
         <TextView
-            android:id="@+id/primaryValue"
+            android:id="@+id/coinAmount"
             style="@style/Headline1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/primaryName"
+        android:id="@+id/coinCode"
         style="@style/Subhead2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

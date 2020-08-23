@@ -105,14 +105,14 @@ class TransactionInfoView : ConstraintLayoutWithHeader {
                 titleViewItem.lockState.locked -> R.drawable.ic_lock
                 else -> R.drawable.ic_unlock
             }
-            primaryValue.setCompoundDrawablesWithIntrinsicBounds(0, 0, lockIcon, 0)
+            coinAmount.setCompoundDrawablesWithIntrinsicBounds(0, 0, lockIcon, 0)
 
             val amountTextColor = if (incoming) R.color.green_d else R.color.yellow_d
-            primaryValue.setTextColor(context.getColor(amountTextColor))
+            coinAmount.setTextColor(context.getColor(amountTextColor))
 
             titleViewItem.primaryAmountInfo.let {
-                primaryName.text = it.getAmountName()
-                primaryValue.text = it.getFormattedForTxInfo()
+                coinCode.text = it.getAmountName()
+                coinAmount.text = it.getFormattedForTxInfo()
             }
 
             titleViewItem.secondaryAmountInfo.let {

@@ -28,4 +28,7 @@ class ProceedButtonView : ConstraintLayout {
         btnProceed.isEnabled = enabled
     }
 
+    fun setText(text: CharSequence) {
+        btnProceed.text = text
+    }
 }

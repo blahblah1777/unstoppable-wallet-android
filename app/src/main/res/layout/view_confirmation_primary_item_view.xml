@@ -61,7 +61,7 @@
         tools:text="$992" />
 
     <TextView
-        android:id="@+id/primaryName"
+        android:id="@+id/coinCode"
         style="@style/Subhead2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
